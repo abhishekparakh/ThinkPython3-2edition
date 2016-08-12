@@ -5,13 +5,19 @@ Scratch pad for practice code while reading the book
 
 
 import turtle
+
+def square(t, length):
+    for i in range(4):
+        t.fd(length)
+        t.lt(90)
+
+def polygon(t, length, n):
+    for i in range(n):
+        t.fd(length)
+        t.lt(360/n)
+
 bob = turtle.Turtle()
-print(bob)
-bob.fd(100)
-bob.lt(90)
-bob.fd(100)
-bob.lt(90)
-bob.fd(100)
-bob.lt(90)
-bob.fd(100)
+length = 10
+polygon(bob, length, 15)
+
 turtle.mainloop()
