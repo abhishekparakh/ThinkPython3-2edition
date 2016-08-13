@@ -3,37 +3,26 @@ Scratch pad for practice code while reading the book
 "Think Python 3 - Second Edition"
 '''
 
+import time
 
-import turtle
-import math
+t = time.time()   #returns seconds
 
-def square(t, length):
-    for i in range(4):
-        t.fd(length)
-        t.lt(90)
+t= int(t)
 
-def polygon(t, length, n):
-    for i in range(n):
-        t.fd(length)
-        t.lt(360/n)
+secsInADay = 60*60*24
 
-def circle(t, r):
-    circumfrence = 2*math.pi*r
-    n = 15  #I fixed it
-    length = circumfrence/n
-    polygon(t, length, n)
+print("Num of days since epoch: ", int(t/secsInADay))
 
-def arc(t, r, angle):
-    circumfrence = 2*math.pi*r
-    n=15    #I fixed it
-    length = circumfrence/n
-    arcSize = angle/360
-    for i in range(int(arcSize*n)):  #this aint very good
-        t.fd(length)
-        t.lt(360/n)
+secsRemaining = t%secsInADay
 
-bob = turtle.Turtle()
-radius = 50
-arc(bob, radius, 270)
+secsInAHour = 60*60
 
-turtle.mainloop()
+print("Num of hours: ", int(secsRemaining/secsInAHour))
+
+secsRemaining = secsRemaining%secsInAHour
+
+secsInAMin = 60
+
+print("Number of minutes: ", int(secsRemaining/secsInAMin))
+
+print("Number of seconds: ", secsRemaining%secsInAMin)
