@@ -3,26 +3,23 @@ Scratch pad for practice code while reading the book
 "Think Python 3 - Second Edition"
 '''
 
-import time
+import turtle
 
-t = time.time()   #returns seconds
 
-t= int(t)
+def first(word):
+    return word[0]
 
-secsInADay = 60*60*24
+def last(word):
+    return word[-1]
 
-print("Num of days since epoch: ", int(t/secsInADay))
+def middle(word):
+    return word[1:-1]
 
-secsRemaining = t%secsInADay
+def is_palindrome(word):
+    if len(word)<=1:
+        return True
+    if first(word)!=last(word):
+        return False
+    return is_palindrome(middle(word))
 
-secsInAHour = 60*60
-
-print("Num of hours: ", int(secsRemaining/secsInAHour))
-
-secsRemaining = secsRemaining%secsInAHour
-
-secsInAMin = 60
-
-print("Number of minutes: ", int(secsRemaining/secsInAMin))
-
-print("Number of seconds: ", secsRemaining%secsInAMin)
+print(is_palindrome('lool'))
