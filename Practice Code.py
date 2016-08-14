@@ -6,20 +6,11 @@ Scratch pad for practice code while reading the book
 import turtle
 
 
-def first(word):
-    return word[0]
-
-def last(word):
-    return word[-1]
-
-def middle(word):
-    return word[1:-1]
-
-def is_palindrome(word):
-    if len(word)<=1:
+def is_power(a,b):
+    if a/b == 1:
         return True
-    if first(word)!=last(word):
+    if a%b != 0:
         return False
-    return is_palindrome(middle(word))
+    return is_power(a/b,b)
 
-print(is_palindrome('lool'))
+print(is_power(27,3))
